@@ -1,0 +1,39 @@
+{
+  "setting": {
+    "facebook_id": "652446068801577Test",
+    "facebook_key": "Testb9821cb512b5ead4db7ad8501e55b5be",
+    "google_id": "Test9LzhqnaXH2P7nzdKm97lS8vt",
+    "google_key": "Test9LzhqnaXH2P7nzdKm97lS8vt",
+    "country_ids": "44,101,181",
+    "logo": "https://tickets.eplworld.com/public/img/logo-eplworld.png",
+    "fav": "https://tickets.eplworld.com/public/img/fav-eplworld.ico",
+    "dark_logo": "https://tickets.eplworld.com/public/img/eplworld.png",
+    "title": "Welcome to  EPLWorld",
+    "currency": [
+      {
+        "currency_code": "GBP",
+        "name": "Pound",
+        "symbol": "£"
+      }
+    ],
+    "default_currency": "GBP",
+    "description": "EPLWORLD",
+    "contact_name": "eplworld",
+    "contact_email": "info@eplworld.com",
+    "contact_phone": "+447498070285",
+    "store_markup": "25",
+    "site_status": "1",
+    "language": [
+      {
+        "language_code": "en",
+        "language_flag": "https://tickets.eplworld.com/public/img/english.svg",
+        "language_name": "English"
+      },
+      {
+        "language_code": "ar",
+        "language_flag": "https://tickets.eplworld.com/public/img/arabic.svg",
+        "language_name": "Arabic"
+      }
+    ]
+  }
+}
