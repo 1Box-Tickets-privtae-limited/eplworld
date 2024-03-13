@@ -1,9 +1,6 @@
 @if(count($results))
     @foreach($results as  $key => $list)   
    @php //pr($list);@endphp
-      @if ($list['row'] == 'TEST 2')
-        @continue
-    @endif
     @php 
         $quantity = $list['quantity'];
         $quantity2 = $list['quantity'];

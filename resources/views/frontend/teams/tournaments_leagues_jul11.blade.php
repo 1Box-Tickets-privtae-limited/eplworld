@@ -25,12 +25,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="onebox-section-heading">
-                    <h2>{{$tournament['tournament_name']}} {{__('messages.tickets')}} <img src="{{$tournament['tournament_image']}}"></h2>
+                    <h2>{{$tournament['tournament_name']}} {{__('messages.tickets')}} <img src="{{$tournament['tournament_image']}}" alt="tournament_image"></h2>
                 </div>
             </div>
         </div>
         <div class="row">
-             
+
             <div class="col-md-6">
 
                 <div class="upcoming-sub_heading">
@@ -82,7 +82,7 @@
                                             <div class="upcoming-teams-date">
                                                 <p>{{$list['match_day']}}<p>
                                                 <p><span>{{$list['match_date']}}</span></p>
-                                                <p>{{$list['match_time']}}</p>                                    
+                                                <p>{{$list['match_time']}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -106,17 +106,17 @@
                                 </div>
                             </div>
                         @endforeach
-                    
+
                     @else
                         <div class="upcoming-teams-list">
                             {{__('messages.no result found')}}
                         </div>
                     @endif
-               
-               
+
+
             </div>
-             
-               
+
+
             <div class="col-md-6">
                 <div class="upcoming-sub_heading">
                     <div class="onebox-sub-heading">
@@ -128,7 +128,7 @@
                         @foreach($teams as $list)
                             <div class="team-view-details">
                                 <div class="team-view-image">
-                                    <a href="{{url(app()->getLocale()).'/'.$list['url_key']}}"><img src="{{$list['team_image']}}"></a>
+                                    <a href="{{url(app()->getLocale()).'/'.$list['url_key']}}"><img src="{{$list['team_image']}}" alt="team_image"></a>
                                     <a href="{{url(app()->getLocale()).'/'.$list['url_key']}}"><p>{{$list['team_name']}}</p></a>
                                     <a href="{{url(app()->getLocale()).'/'.$list['url_key']}}">{{__('messages.view detail')}} <i class="fas fa-long-arrow-right"></i></a>
                                 </div>
@@ -139,22 +139,22 @@
                             {{__('messages.no result found')}}
                         </div>
                     @endif
-            
-                    
+
+
                 </div>
             </div>
         </div>
-        
+
 
         @if(trim(strip_tags($tournament['page_content'])))
 
         <div class="fc_tickets">
-                            
+
             {!!$tournament['page_content']!!}
         </div>
         @endif
 
-    </div>        
+    </div>
 </section>
 <!-----------Tournaments end --------------->
 

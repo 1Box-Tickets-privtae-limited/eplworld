@@ -21,7 +21,7 @@
             <div class="last-match-box">
                 <div class="col-md-3 col-sm-3 col-xs-3">
                     <div class="last-match-result-one last-match-result">
-                           
+
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 pad_five">
@@ -35,7 +35,7 @@
                     </div>
 
                 </div>
-                
+
                  @if(@$results['top_games'] == 1)<div class="top_event">{{__('messages.top event')}}</div>
                  @endif
             </div>
@@ -69,14 +69,14 @@
                     </div>@endif
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12">
-                    @if(@$results['almost_sold'] == '1') 
+                    @if(@$results['almost_sold'] == '1')
                     <div class="sold_out">
                          <p>{{__("messages.tickets are")}} <br>{{__("messages.almost sold out")}}!</p>
                     </div>
                     @endif
                 </div>
             </div>
-        
+
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="ticket_guarantee">
@@ -133,18 +133,18 @@
                                     </a>
                                 </li>
                                 @endif
-                            @endforeach  
+                            @endforeach
                     </ul>
                      @endif
-                </div> 
+                </div>
 
                 <div class="mobile_view">
                     <div class="booking-project">
                         <p>{{__('messages.ticket refund protection')}}</p>
-                        <img src="{{asset('/')}}/public/img/booking-protect.png">
+                        <img src="{{asset('/')}}/public/img/booking-protect.png" alt="booking">
                     </div>
-                </div>                
-                
+                </div>
+
                 <div class="stadium_para">
                     {!!$results['description'] !!}
                 </div>
@@ -156,7 +156,7 @@
                         <li> <i class="fas fa-check"></i> No cancellations</li>
                         <li> <i class="fas fa-check"></i> 100% Ticket guarantee</li>
                     </ul>
-                    
+
                 </div>
             </div>
             <div class="col-md-7">
@@ -167,7 +167,7 @@
                     <div class="onebox-tickets-boook_details">
                         <div class="tickets_left">
                              <p>
-                                @php 
+                                @php
 
                                 $ticket_count_alert =  __('messages.only tickets left for this event')  ;
                                 @endphp
@@ -187,7 +187,7 @@
                                     @for($i=1; $i<=$ticketQuantity;$i++)
                                         <option value="{{$i}}">{{$i}}</value>
                                     @endfor
-                                @endif                        
+                                @endif
                             </select>
                         </div>
                         <div class="ticket_quality select">
@@ -215,7 +215,7 @@
                         <div class="no_ticket_found">
                         <p class="text-center">
                             {{__('messages.currently no ticket amount')}}
-                           
+
                         </p>
                         <p class="text-center"><a href="javascript:void(0)" onClick="requestNow({{$results["m_id"]}},'{{$results["match_date"]}}','{{$results["match_time"]}}')" class="onebox-btn request_btn">{{__('messages.request now')}}</a> </p>
                     </div>
@@ -225,14 +225,14 @@
 
                     <div class="no_ticket_found">
                         <p class="text-center">
-                             Currently there are no available tickets for this event. If you are looking any upcoming matches 
+                             Currently there are no available tickets for this event. If you are looking any upcoming matches
 
                               <p class="text-center"><a class="onebox-btn " href="{{url(app()->getLocale().'/advance-search')}}"> Click Here</a></p>
                         </p>
-                       
+
                     </div>
                     @endif
-                   
+
             </div>
         </div>
     </div>
@@ -308,7 +308,7 @@
                         <div class="col-md-12">
                             <div class="booking-project">
                                 <p>{{__('messages.ticket refund protection')}}</p>
-                                <img src="{{asset('/')}}/public/img/booking-protect.png">
+                                <img src="{{asset('/')}}/public/img/booking-protect.png" alt="booking_protect">
                             </div>
                         </div>
                     </div>
@@ -337,10 +337,10 @@
          $(function () {
             $("body").on("click",".add_to_cart_button",function(){
                 var id = $(this).data('id');
-         
+
                  $("#add_to_cart_" + id).validate({
                       submitHandler: function (form) {
-                      
+
                         $.ajax({
                             url: "{{url(app()->getLocale().'/add-to-cart')}}",
                             type: "post",
@@ -348,15 +348,15 @@
                             data:  $("#add_to_cart_" + id).serialize(),
                             success: function(response) {
                                window.location.href = "{{url(app()->getLocale().'/checkout')}}";
-                            }            
-                        }); 
+                            }
+                        });
                         return false;
                       }
                  });
                  $("#add_to_cart_" + id).submit();
             });
-       
-        
+
+
           $('[data-toggle="tooltip"]').tooltip();
         })
 
@@ -393,8 +393,8 @@
                 if(response.success == true && response.html != ""){
                     $("#loading_2").hide();
                     $('.tickets_details_list').html(response.html);
-                } 
-            }            
+                }
+            }
         });
      }
 
@@ -462,7 +462,7 @@
 
 
                       $.each(stadium_cat_details, function (indx, itm) {
-                               
+
                                     $.each(itm, function (indx2, itm2) {
                                         $('#' + itm2).css({fill: stadium_block_details[itm2]});
                                         //$('#'+itm2).css('pointer-events', '');
@@ -482,7 +482,7 @@
 
                                     });
                             });
-                          
+
 
                     }, 2000);
                 }
@@ -570,7 +570,7 @@
         if (no_tckt != '') {
             var matchId = '{{$results['m_id']}}';
             get_ticket(selectCategory);
-            
+
         } else {
             get_ticket(selectCategory)
         }
@@ -710,7 +710,7 @@
     }
 
     $("body").on("click",".show-more",function () {
-   
+
             if($(this).parents(".main_parent").find(".show-more-list").hasClass("show-more-height")) {
                 $(this).html("{{__('messages.show less')}} -");
             } else {

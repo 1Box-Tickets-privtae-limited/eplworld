@@ -17,7 +17,7 @@
             <div class="col-md-12">
                     <div class="onebox-section-heading">
                     <h1><span>About</span> 1BoxOffice</h1>
-                    </div> 
+                    </div>
                 </div>
         </div>
     </div>
@@ -37,10 +37,10 @@
                 <div class="col-md-6">
                     <div class="about_img">
                         <div class="merg_img">
-                            <img src="http://site.1boxoffice.co//public/img/new_img/soccer.png">
+                            <img src="http://site.1boxoffice.co//public/img/new_img/soccer.png" alt="soccer">
                         </div>
                         <div class="merg_img_box">
-                            <img src="http://site.1boxoffice.co//public/img/new_img/boxoffice.png">
+                            <img src="http://site.1boxoffice.co//public/img/new_img/boxoffice.png" alt="boxoffice">
                         </div>
                     </div>
                 </div>
