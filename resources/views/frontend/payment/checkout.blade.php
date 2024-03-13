@@ -349,7 +349,7 @@ $cart_id = Session::get('cart_id');
                             <div class="row checkout-form">
                                 <div class="col-md-12">
                                     <div class="content-group">
-                                        <p>{{__('messages.use the above contact information to receive your tickets or for our team to contact you to arrange delivery if necessary')}}</p>
+                                        <p>{{__('messages.use the above contact information to receive your tickets or for our team to contact you to arrange delivery if neccessary')}}</p>
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-     
+
 
       <!-- Breadcromb Area Start -->
 
@@ -26,9 +26,9 @@
     </section>
     <!-- Breadcromb Area End -->
 
-    
 
-    
+
+
  <section class="onebox-my-order-info section_50">
         <div class="container">
             <div class="row">
@@ -38,7 +38,7 @@
                             <h3>{{__('messages.my orders')}}</h3>
                         </div>
                         <div class="order_sub_heading" data-status="{{$results['booking_status']}}">
-                  
+
                             @if($results['booking_status'] == 1 || $results['booking_status'] == 4 || $results['booking_status'] == 5 || $results['booking_status'] == 6)
                             <div class="update_attendees">
                                 <a href="{{url(app()->getLocale().'/nominee/')}}/{{md5($results['bg_id'])}}">{{__('messages.update nominee')}}</a>
@@ -46,7 +46,7 @@
                             @endif
                         </div>
                     </div>
-                    
+
 
                     <div class="my_orders_detils_all">
                         <div class="my_order_informations">
@@ -59,52 +59,52 @@
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td><b>{{__('messages.order id')}}: </b></td>  
-                                                    <td><span class="clr_grey"><a href="">#{{$results['booking_no']}}</a></span></td>  
+                                                    <td><b>{{__('messages.order id')}}: </b></td>
+                                                    <td><span class="clr_grey"><a href="">#{{$results['booking_no']}}</a></span></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><b>{{__('messages.order status')}}:</b></td>  
+                                                    <td><b>{{__('messages.order status')}}:</b></td>
                                                     <td>@if($results['booking_status'] == 1)
-                                 
+
                                     <span class="">{{__('messages.confirmed')}}</span>
-                                
+
                                 @endif
                                   @if($results['booking_status'] == 0)
-                                 
+
                                     <span class="">{{__('messages.failed')}}</span>
-                                
+
                                 @endif
                                   @if($results['booking_status'] == 2)
-                                 
+
                                     <span class="">{{__('messages.pending')}}</span>
-                                
+
                                 @endif
                                  @if($results['booking_status'] == 3)
-                                 
+
                                     <span class="">{{__('messages.cancelled')}}</span>
-                                
+
                                 @endif
                                 @if(count($active_tickets) > 0)
                                  @if($results['booking_status'] == 4)
-                                 
+
                                     <span class="">{{__('messages.shipped')}}</span>
-                                
+
                                 @endif
                                  @if($results['booking_status'] == 5 || $results['delivery_status'] == '6')
-                                 
+
                                     <span class="">{{__('messages.delivered')}}</span>
-                                
+
                                 @endif
                                  @if($results['booking_status'] == '6')
-                                 
+
                                     <span class="">{{__('messages.downloaded')}}</span>
-                                
+
                                 @endif
                                  @if($results['booking_status'] == '7')
-                                 
+
                                     <span class="">{{__('messages.not_initiated')}}</span>
-                                
-                           
+
+
                                 @endif @endif
                             </td>
                         </tr>
@@ -118,20 +118,20 @@
                                             <tbody>
                                                 <tr>
                                                     <td><b>{{__('messages.order date and time')}}:</b></td>
-                                                    <td>{{\Carbon\Carbon::parse($results['payment_date'])->format('d F Y')}} </td>           
+                                                    <td>{{\Carbon\Carbon::parse($results['payment_date'])->format('d F Y')}} </td>
                                                 </tr>
                                                 <tr>
                                                     <td><b>{{__('messages.ticket format')}}: </b></td>
                                                    @if(!$mobile)
                            @if($results['ticket_type'] == 1)
                               <td data-label="{{__('messages.e-tickets')}}:">{{__('messages.season cards status')}}</td>
-                           
+
                               @elseif($results['ticket_type'] == 2)
                               <td data-label="{{__('messages.e-tickets')}}:">{{__('messages.e-tickets')}}</td>
-                            
+
                               @elseif($results['ticket_type'] == 3)
                               <td data-label="{{__('messages.e-tickets')}}:">{{__('messages.paper status')}}</td>
-                            
+
                               @elseif($results['ticket_type'] == 4)
                               <td data-label="{{__('messages.e-tickets')}}:">{{__('messages.mobile')}}</td>
                             @endif
@@ -150,14 +150,14 @@
                                                     <td><b>{{__('messages.ticket delivery date')}}:</b></td>
                                                     <td>@if($results['tbc_status'])
                                 {{$results['tbc_status']}}
-                            @else {{date('d F Y', strtotime('-1 day', strtotime($results['match_date'])))}}@endif</td>           
+                            @else {{date('d F Y', strtotime('-1 day', strtotime($results['match_date'])))}}@endif</td>
                                                 </tr>
                                                 <tr>
                                                     <td><b>{{__('messages.ticket status')}}:</b></td>
                                                     <td data-label=""> @if($results['ticket_type'] == 2 && count($active_tickets) > 0)
 
                         @if(($results['delivery_status'] == 2 || $results['delivery_status'] == 4 || $results['delivery_status'] == 5 || $results['delivery_status'] == 6) && ($results['booking_status'] != 0 && $results['booking_status'] != 3 && $results['booking_status'] != 7))
-                       
+
                         <a href="{{url(app()->getLocale())}}/download/{{md5($results['booking_no'])}}"><span class="clrbs">Download Tickets</span></a>
                         <input type="hidden" name="test" value="<?php echo count($active_tickets);?>">
                         @endif
@@ -176,8 +176,8 @@
                         <!--   {{__('messages.not available')}} -->
                          <!-- <span class="clrbs"><a href="#">{{__('messages.not available')}}</a></span> -->
                            @endif
-                       
-                            @endif</td>          
+
+                            @endif</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -190,13 +190,13 @@
                                 <p>{{__('messages.ticket information')}}</p>
                             </div>
                             <div class="row">
-                                <div class="col-md-8 col-sm-8 col-xs-8 full_widd"> 
+                                <div class="col-md-8 col-sm-8 col-xs-8 full_widd">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="my_order-img">
-                                                <img src="{{$results['team_image_a']}}" alt="">
-                                                <img src="{{$results['team_image_b']}}" alt="">
-                                            </div>                
+                                                <img src="{{$results['team_image_a']}}" alt="team_image_a">
+                                                <img src="{{$results['team_image_b']}}" alt="team_image_b">
+                                            </div>
                                         </div>
                                         <div class="col-md-9">
                                             <div class="my_order-tickets-content">
@@ -205,8 +205,8 @@
                                                 <div class="popular-date-time">@if($results['tbc_status'])
                                                 {{$results['tbc_status']}}
                                                 @else
-                                                {{\Carbon\Carbon::parse($results['match_date'])->format('d F Y')}} | 
-                                                {{$results['match_time']}} 
+                                                {{\Carbon\Carbon::parse($results['match_date'])->format('d F Y')}} |
+                                                {{$results['match_time']}}
                                                 @endif </div>
                                                 <p>{{$results['country_name']}},{{$results['city_name']}}</p>
                                                 <div class="e_tickets">
@@ -223,7 +223,7 @@
                                                         <li><div class="tick tick_padd"><i class="fas fa-caret-right"></i> {{$row['text']}}</div></li>
                                                          @endforeach
                                                     </ul>
-                                                    @endif 
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -235,7 +235,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td><b>{{__('messages.payment status')}}: </b></td>
-                                                   
+
                                                     @if($results['payment_status'] == 0)
                                                     <td data-label="Order:">
                                                    {{__('messages.failed')}}
@@ -260,7 +260,7 @@
                                                     <td data-label="Order:">
                                                     {{__('messages.canceled')}}
                                                     </td>
-                                                    @endif       
+                                                    @endif
                                                 </tr>
                                                 <tr>
                                             <td><b>{{__('messages.transaction amount')}}</b></td>
@@ -279,7 +279,7 @@
                                         <td><b>{{__('messages.price')}}</b></td>
                                         <td><span dir="ltr">
                                         @if(strtoupper($results['currency_type']) == 'GBP')
-                                    <i class="fas fa-pound-sign"></i> 
+                                    <i class="fas fa-pound-sign"></i>
                                     @endif
                                     @if(strtoupper($results['currency_type']) == 'EUR')
                                     <i class="fas fa-euro-sign"></i>
@@ -348,7 +348,7 @@
         </div>
     </section>
 
-             
+
 
 @endsection
 @push('scripts')

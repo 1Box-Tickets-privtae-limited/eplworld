@@ -16,15 +16,15 @@
                         <tr>
                             <td width="100%" style="background-color: #fff; color: #58585a; padding: 20px;">
                                 <div style="text-align: left; padding: 20px 46px 30px; background: #fff; margin-bottom: 10px; text-decoration: none;">
-                                  
+
                                     <p style="font-size: 16px; color: #1c1c1c;">Dear {%%FULLNAME%%},</p>
-                                    
-                                    
+
+
                                      <p style="font-size: 14px; color: #1c1c1c;">Tickets for {%%MATCHNAME%%} is still available for booking. </p>
 
 
                                     <div style="border-top: 1px solid #eaeaea; margin: 10px 0px;">&nbsp;</div>
-                                  
+
                                     <h2 style="display: block; text-align: center; text-transform: uppercase; font-size: 20px; color: #1c1c1c; margin: 10px 0px 10px;">Here's Your cart Summary</h2>
                                     <div style="padding: 28px 24px; background: #f5f5f5; margin: 0px 0px 38px;">
                                         <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
@@ -40,7 +40,7 @@
                                                     <td style="border-bottom: 1px solid #1c1c1c;">
                                                         <p style="text-align: left; color: #1c1c1c; font-size: 14px; float: left; width: 65%;">
                                                             <span style="display: block; margin-bottom: 5px; line-height: 18px;font-weight: bold">{%%MATCHNAME%%} ( {%%CATEGORY%%} )</span>
-                                                           
+
                                                             <span style="display: block;">{%%MATCHDATE%%}</span>
                                                              <span style="display: block;">{%%TOURNAMENT%%}</span>
                                                               <span style="display: block;"> {%%STADIUM%%}</span>
@@ -52,20 +52,20 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        
+
                                         <p align="center"> <a href="{%%URL%%}" style="background:#b00505;color:#fff;border:#b00505 solid 1px;padding:10px;text-decoration:none;border-radius:5px;display:block;font-size:16px;font-weight:400;width:50%" target="_blank" >Complete your order now</a></p>
                                     </div>
-                                    
-                                 
-                                    
+
+
+
                             </td>
                         </tr>
                     </table>
 
-               
 
 
-     
+
+
 
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="min-width:100%;margin-top: 20px;margin-bottom: 20px;">
               <tr>
@@ -73,13 +73,13 @@
                   <table cellpadding="0" cellspacing="0" border="0" width="100%">
                     <tr>
                       <td style="padding:0px 10px 0 0;color:#000;">
-                        <p style="font-size:14px;background-color: #fff;padding: 20px;margin: 0px;text-align: center;"><img src="{%%IMAGEPATH%%}icon_account.png" style="margin-right: 10px;">My account</p>
+                        <p style="font-size:14px;background-color: #fff;padding: 20px;margin: 0px;text-align: center;"><img alt="icon1" src="{%%IMAGEPATH%%}icon_account.png" style="margin-right: 10px;">My account</p>
                       </td>
                       <td style="padding:0px 10px 0 0;color:#000;">
-                        <p style="font-size:14px;background-color: #fff;padding: 20px;margin: 0px;text-align: center;"><img src="{%%IMAGEPATH%%}icon_company.png" style="margin-right: 10px;">About us</p>
+                        <p style="font-size:14px;background-color: #fff;padding: 20px;margin: 0px;text-align: center;"><img alt="icon2" src="{%%IMAGEPATH%%}icon_company.png" style="margin-right: 10px;">About us</p>
                       </td>
                       <td style="padding:0px 0px 0 0;color:#000;">
-                        <p style="font-size:14px;background-color: #fff;padding: 20px;margin: 0px;text-align: center;"><img src="{%%IMAGEPATH%%}phone.png" style="margin-right: 10px;">Contact </p>
+                        <p style="font-size:14px;background-color: #fff;padding: 20px;margin: 0px;text-align: center;"><img alt="icon3" src="{%%IMAGEPATH%%}phone.png" style="margin-right: 10px;">Contact </p>
                       </td>
                     </tr>
                   </table>
@@ -113,7 +113,7 @@
                   color: #000000;"
                   alt="T" title="Twitter"
                   width="44" height="44"
-                  src="{%%IMAGEPATH%%}twitter.png"></a></td>       
+                  src="{%%IMAGEPATH%%}twitter.png"></a></td>
 
                   <!-- ICON 3 -->
                   <td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
@@ -122,12 +122,12 @@
                   color: #000000;"
                   alt="G" title="Google Plus"
                   width="44" height="44"
-                  src="{%%IMAGEPATH%%}googleplus.png"></a></td>    
+                  src="{%%IMAGEPATH%%}googleplus.png"></a></td>
 
 
               </tr>
             </table>
-            
+
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="min-width:100%;">
               <tr>
                 <td width="100%" style="min-width:100%;">

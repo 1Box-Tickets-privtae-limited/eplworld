@@ -70,7 +70,7 @@
             </form>
         </div>
         <div class="" id="tracking_info">
-            
+
         </div>
         @if(app()->getLocale() == "en")
         <div class="track-order-details-new">
@@ -89,7 +89,7 @@
                 <div class="tickets_all">
                     <div class="pdf_ticket">
                         <div class="pdf_ticket_img">
-                            <img src="../public/img/pdf_1.png">
+                            <img src="../public/img/pdf_1.png" alt="pdf">
                         </div>
                         <div class="pdf_tick_info">
                             <h4>PDF Tickets</h4>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="pdf_ticket">
                         <div class="pdf_ticket_img">
-                            <img src="../public/img/pdf_2.png">
+                            <img src="../public/img/pdf_2.png" alt="pdf_2">
                         </div>
                         <div class="pdf_tick_info">
                             <h4>Mobile Tickets</h4>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="pdf_ticket">
                         <div class="pdf_ticket_img">
-                            <img src="../public/img/pdf_3.png">
+                            <img src="../public/img/pdf_3.png" alt="pdf_3">
                         </div>
                         <div class="pdf_tick_info">
                             <h4>Paper Tickets</h4>
@@ -137,7 +137,7 @@
                             <div class="tickets_all">
                                 <div class="pdf_ticket">
                                     <div class="pdf_ticket_img">
-                                        <img src="../public/img/pdf_1.png">
+                                        <img src="../public/img/pdf_1.png" alt="pdf_21">
                                     </div>
                                     <div class="pdf_tick_info">
                                         <h4>تذاكر PDF </h4>
@@ -146,7 +146,7 @@
                                 </div>
                                 <div class="pdf_ticket">
                                     <div class="pdf_ticket_img">
-                                        <img src="../public/img/pdf_2.png">
+                                        <img src="../public/img/pdf_2.png" alt="pdf_22">
                                     </div>
                                     <div class="pdf_tick_info">
                                         <h4>تذاكر الجوال</h4>
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="pdf_ticket">
                                     <div class="pdf_ticket_img">
-                                        <img src="../public/img/pdf_3.png">
+                                        <img src="../public/img/pdf_3.png" alt="pdf_32">
                                     </div>
                                     <div class="pdf_tick_info">
                                         <h4>تذاكر ورقية</h4>
@@ -251,7 +251,7 @@
                     if(response.status){
                         $("#tracking_info").html(response.html);
                     }
-                }            
+                }
             });
             return false;
         }

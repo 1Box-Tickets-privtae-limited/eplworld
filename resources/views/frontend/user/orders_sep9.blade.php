@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-     
+
 
          <!-- Breadcromb Area Start -->
     <section class="onebox-breadcromb-area">
@@ -19,9 +19,9 @@
         </div>
     </section>
     <!-- Breadcromb Area End -->
-    
 
-    
+
+
  <section class="onebox-your-orders section_50">
         <div class="container">
             <div class="">
@@ -46,17 +46,17 @@
                       <th>{{__('messages.e-tickets')}}</th>
                       <th>&nbsp;</th>
                     </tr>
-                    
-                  
+
+
                     @foreach($results as $row)
 
                     <tr class="row_clickable" data-href="{{url(app()->getLocale())}}/orders/{{md5($row['booking_no'])}}" style="cursor:pointer;">
                       <td data-label="{{__('messages.order no')}}:"><span class="order">#{{$row['booking_no']}}</span></td>
                       <td data-label="{{__('messages.event')}}:">
-                        <div class="imagg"><img src="{{$row['team_image_a']}}">
-                        <img src="{{$row['team_image_b']}}"></div>
+                        <div class="imagg"><img src="{{$row['team_image_a']}}" alt="team_image_a">
+                        <img src="{{$row['team_image_b']}}" alt="team_image_b"></div>
                         <div class="txtt">
-                        {{$row['match_name']}} <br> {{$row['country_name']}} ,{{$row['city_name']}}<br><span class="tr_date"><i class="fas fa-calendar-week"></i>{{\Carbon\Carbon::parse($row['match_date'])->format('d/m/Y')}} </span>&nbsp;<span class="tr_date"><i class="fas fa-clock"></i>{{$row['match_time']}}</span> 
+                        {{$row['match_name']}} <br> {{$row['country_name']}} ,{{$row['city_name']}}<br><span class="tr_date"><i class="fas fa-calendar-week"></i>{{\Carbon\Carbon::parse($row['match_date'])->format('d/m/Y')}} </span>&nbsp;<span class="tr_date"><i class="fas fa-clock"></i>{{$row['match_time']}}</span>
                         </div>
                       </td>
                       <!-- @if($row['ticket_type'] == 1)
@@ -74,22 +74,22 @@
                        @if($row['ticket_type'] == '')
                       <td data-label="{{__('messages.ticket format')}}:"></td>
                       @endif
-  -->           @if($mobile != 1)          
+  -->           @if($mobile != 1)
                <td data-label="{{__('messages.section')}}:">{{$row['seat_category']}} </td>
                @endif
                       <td data-label="{{__('messages.quantity')}}:">{{$row['quantity']}} </td>
                       <td data-label="{{__('messages.price')}}:">
                         <span class="ltr"><b>
                         @if(strtoupper($row['currency_type']) == 'GBP')
-                         <i class="fas fa-pound-sign"></i> 
+                         <i class="fas fa-pound-sign"></i>
                          @endif
                          @if(strtoupper($row['currency_type']) == 'EUR')
-                        <i class="fas fa-euro-sign"></i> 
+                        <i class="fas fa-euro-sign"></i>
                          @endif
                           @if(strtoupper($row['currency_type']) != 'GBP' && strtoupper($row['currency_type']) != 'EUR')
                         {{$row['currency_type']}}
                          @endif
-                          {{number_format($row['total_amount'],2)}} 
+                          {{number_format($row['total_amount'],2)}}
                      </b></span></td>
                       <td data-label="{{__('messages.transaction date')}}:">{{$row['updated_at']}} </td>
                       @if($row['booking_status'] == 0)
@@ -100,7 +100,7 @@
                       @endif
                       @if($row['booking_status'] == 2)
                       <td data-label="{{__('messages.status')}}:">{{__('messages.pending')}}</td>
-                      @endif 
+                      @endif
                       @if($row['booking_status'] == 3)
                       <td data-label="{{__('messages.status')}}:">{{__('messages.cancelled')}}</td>
                       @endif
@@ -116,7 +116,7 @@
                       @if($row['booking_status'] == 7)
                       <td data-label="{{__('messages.status')}}:">{{__('messages.not_initiated')}}</td>
                       @endif
-                      @if($mobile != 1) 
+                      @if($mobile != 1)
                     <td data-label="{{__('messages.e-tickets')}}:" style="cursor: pointer;">
                           @if($row['ticket_type'] == 2)
 
@@ -138,7 +138,7 @@
                           {{__('messages.not available')}}
                          <!-- <span class="clrbs"><a href="#">{{__('messages.not available')}}</a></span> -->
                            @endif
-                       
+
                             @endif
                     </td>
                      @endif
@@ -147,10 +147,10 @@
                             <button class="btn_desk">{{__('messages.order details')}}</button>
                             <!-- <i class="fas fa-angle-double-right"></i> --><!-- <button class="btn_mobile">{{__('messages.view detail')}}</button> --></a></td>
                     </tr>
-                    
+
                     @endforeach
-                    
-                    
+
+
                   </tbody>
                 </table>
                  @else

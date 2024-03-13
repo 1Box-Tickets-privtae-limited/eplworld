@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-     
+
 
          <!-- Breadcromb Area Start -->
     <section class="onebox-breadcromb-area">
@@ -19,9 +19,9 @@
         </div>
     </section>
     <!-- Breadcromb Area End -->
-    
 
-    
+
+
  <section class="onebox-your-orders section_50">
         <div class="container">
             <div class="">
@@ -47,20 +47,20 @@
                       <th>&nbsp;</th>
                       <th>&nbsp;</th>
                     </tr>
-                    
-                  
+
+
                     @foreach($results as $row)
 
                     <tr class="row_clickable" data-href="{{url(app()->getLocale())}}/orders/{{md5($row['booking_no'])}}" style="cursor:pointer;">
                       <td data-label="{{__('messages.order no')}}:"><span class="order">#{{$row['booking_no']}}</span></td>
                       <td data-label="{{__('messages.event')}}:">
-                        <div class="imagg"><img src="{{$row['team_image_a']}}">
-                        <img src="{{$row['team_image_b']}}"></div>
+                        <div class="imagg"><img src="{{$row['team_image_a']}}" alt="team_image_a">
+                        <img src="{{$row['team_image_b']}}" alt="team_image_b"></div>
                         <div class="txtt">
                         {{$row['match_name']}} <br> {{$row['country_name']}} ,{{$row['city_name']}}<br><span class="tr_date"><i class="fas fa-calendar-week"></i> @if($row['tbc_status'])
                                 {{$row['tbc_status']}}
                             @else
-                            {{\Carbon\Carbon::parse($row['match_date'])->format('d F Y')}} </span>&nbsp;<span class="tr_date"><i class="fas fa-clock"></i>{{$row['match_time']}}</span> 
+                            {{\Carbon\Carbon::parse($row['match_date'])->format('d F Y')}} </span>&nbsp;<span class="tr_date"><i class="fas fa-clock"></i>{{$row['match_time']}}</span>
                             @endif
                         </div>
                       </td>
@@ -79,22 +79,22 @@
                        @if($row['ticket_type'] == '')
                       <td data-label="{{__('messages.ticket format')}}:"></td>
                       @endif
-  -->           @if($mobile != 1)          
+  -->           @if($mobile != 1)
                <td data-label="{{__('messages.section')}}:">{{$row['seat_category']}} </td>
                @endif
                       <td data-label="{{__('messages.quantity')}}:">{{$row['quantity']}} </td>
                       <td data-label="{{__('messages.price')}}:">
                         <span class="ltr"><b>
                         @if(strtoupper($row['currency_type']) == 'GBP')
-                         <i class="fas fa-pound-sign"></i> 
+                         <i class="fas fa-pound-sign"></i>
                          @endif
                          @if(strtoupper($row['currency_type']) == 'EUR')
-                        <i class="fas fa-euro-sign"></i> 
+                        <i class="fas fa-euro-sign"></i>
                          @endif
                           @if(strtoupper($row['currency_type']) != 'GBP' && strtoupper($row['currency_type']) != 'EUR')
                         {{$row['currency_type']}}
                          @endif
-                          {{number_format($row['total_amount'],2)}} 
+                          {{number_format($row['total_amount'],2)}}
                      </b></span></td>
                       <td data-label="{{__('messages.transaction date')}}:">{{\Carbon\Carbon::parse($row['updated_at'])->format('d F Y')}} </td>
                       @if($row['booking_status'] == 0)
@@ -105,7 +105,7 @@
                       @endif
                       @if($row['booking_status'] == 2)
                       <td data-label="{{__('messages.status')}}:">{{__('messages.pending')}}</td>
-                      @endif 
+                      @endif
                       @if($row['booking_status'] == 3)
                       <td data-label="{{__('messages.status')}}:">{{__('messages.cancelled')}}</td>
                       @endif
@@ -121,7 +121,7 @@
                       @if($row['booking_status'] == 7)
                       <td data-label="{{__('messages.status')}}:">{{__('messages.not_initiated')}}</td>
                       @endif
-                      @if($mobile != 1) 
+                      @if($mobile != 1)
                     <td  data-label="{{__('messages.e-tickets')}}:" style="cursor: pointer;">
                           @if($row['ticket_type'] == 2)
 
@@ -143,7 +143,7 @@
                           {{__('messages.not available')}}
                          <!-- <span class="clrbs"><a href="#">{{__('messages.not available')}}</a></span> -->
                            @endif
-                       
+
                             @endif
                     </td>
                      @endif
@@ -162,10 +162,10 @@
                     </td>
 
                     </tr>
-                    
+
                     @endforeach
-                    
-                    
+
+
                   </tbody>
                 </table>
                  @else
@@ -211,8 +211,8 @@
             </div>
         </div>
     </div>
-    
-   
+
+
 
 
 <style type="text/css">.col-md-2, .col-md-10{
@@ -271,7 +271,7 @@
 }
 .msg_receive{
     background: #05728f ;
-   
+
      color: #FFF;
 }
 .sender_new_message{
@@ -420,7 +420,7 @@ $(document).ready(function(){
             data : { status : status , booking_id : message_id },
             dataType: 'json',
             success:function(data){
-              
+
                 var _new_message = "";
                 if(data.message.length > 0){
                     $.each(data.message, function(i, item) {
@@ -429,15 +429,15 @@ $(document).ready(function(){
                         var new_message_message = "new_message_11";
                     else
                          var new_message_message = "";
-                       if(item.send_by ==  1) { 
+                       if(item.send_by ==  1) {
                             _new_message += '<div class="row msg_container base_sent"> <div class="col-md-10 col-xs-10"> <div class="messages msg_receive  text-right '+new_message_message+'"> <p>'+item.message +' </p><time datetime="'+item.updated_at+'">  '+item.created_at+'</time>  </div></div><div class="col-md-2 col-xs-2 avatar"> <img src="{{url("public/img/man-user.png")}}" class=" img-responsive "> </div></div>';
                         }
-                       else{  
+                       else{
                               _new_message += '<div class="row msg_container base_receive"> <div class="col-md-2 col-xs-2 avatar"> <img src="{{url("public/img/customer-service.png")}}" class=" img-responsive "> </div>  <div class="col-md-10 col-xs-10"> <div class="messages msg_sent  '+new_message_message+'"> <p>'+item.message +' </p><time datetime="'+item.updated_at+'">  '+item.updated_at+'</time>  </div></div></div>';
                         }
 
 
-                        
+
                     });
                     $(".msg_loading").hide();
                     $(".msg_container_base").append(_new_message);
@@ -448,7 +448,7 @@ $(document).ready(function(){
 
                 }
                 else{
-                     
+
                      $(".msg_container_base").html("<p class='text-center start_new'>Start a new chats</p>");
                 }
             }

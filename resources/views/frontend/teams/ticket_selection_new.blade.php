@@ -728,7 +728,7 @@
         });
 
    // get_ticket(1)
-    var limit = 50;
+    var limit = 10;
     var start = 1; 
     var action = 'inactive'; 
 

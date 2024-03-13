@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-     
+
     <style type="text/css">
         .iti--allow-dropdown .iti__flag-container, .iti--separate-dial-code .iti__flag-container{
             right: unset !important;
@@ -32,7 +32,7 @@
         </div>
     </section>
     <!-- Breadcromb Area End -->
-    
+
 
     <!-- seller profile Start -->
     <section class="onebox-seller-area ">
@@ -59,7 +59,7 @@
                                 <strong>
                                   {{Session::get('success')}}
                                 </strong>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -80,8 +80,8 @@
                                     <div class="profile-content">
                                         <div class="profile-form">
                                             <div class="profile-userpic">
-                                                <img src="{{url('public/img/new_img/user_log.png')}}" class="img-responsive" alt="">
-                                            </div> 
+                                                <img src="{{url('public/img/new_img/user_log.png')}}" class="img-responsive" alt="user_log">
+                                            </div>
                                             <form method="post" action="{{url(app()->getLocale().'/profile-update')}}" id="profile" autocomplete="off">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 <div class="row seller-form mt-3">
@@ -147,13 +147,13 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                              
+
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="address_state"><b>{{__('messages.state')}}<span class="error">*</span></b></label>
                                                             <select name="state" id="state" class="form-control" required>
                                                                 <option value="">{{__('messages.select state')}}</option>
-                                                              
+
                                                             </select>
                                                         </div>
                                                     </div>
@@ -169,7 +169,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
         </div>
 </section>
 <?php //echo "<pre>";print_r($_SERVER);?>
-                        
+
     <!-- seller profile End -->
 <!-- {{$user['country_code']}}
  -->@endsection
@@ -206,10 +206,10 @@
     $("body").on("change","#country",function(){
         var val = $(this).val();
         get_state(val);
-    }); 
+    });
 
     function get_state(val,selected = ""){
-       
+
         $.ajax({
                 type: "POST",
                 url: "{{url(app()->getLocale().'/get_state')}}",
@@ -218,7 +218,7 @@
                     // $("#state-list").addClass("loader");
                 },
                 success: function(data){
-                    
+
                     var option = "";
                     jQuery.each(data, function(index, item) {
                          var selected_text = "";
@@ -227,7 +227,7 @@
                                 selected_text =  "selected";
                             }
                         }
-                        
+
                         option += "<option value='"+item.id+"'  "+selected_text+" >"+ item.name+"</option>"
                     });
                     $("#state").html(option);
